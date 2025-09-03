@@ -1,0 +1,23 @@
+span.swiper-pagination-bullet-active {
+    background-color: black;
+}
+
+.parent-pagination {
+  display: flex; gap: 8px; align-items: center; margin-block: 12px;
+}
+
+.pagination-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #a0aec0; border: 0; cursor: pointer;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.pagination-dot.is-active {
+  background: #42567A;
+  transform: scale(1.2);
+}
+
+/* для доступности */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0;
+  clip: rect(0 0 0 0); clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+}
