@@ -47,7 +47,10 @@
                     position: relative;
                     transform: translateZ(0);
 
-                    div.timeline-years,
+                    div.timeline-years {
+                        margin-left: 1.25rem;
+                        margin-right: 1.75rem;
+                    }
                     hr {
                         margin-left: 1.25rem;
                         margin-right: 1.75rem;
