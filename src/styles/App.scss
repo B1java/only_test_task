@@ -16,11 +16,15 @@
 
 }
 
-.timeline {
+section.timeline {
     position: relative;
 
     div.timeline-parent {
         position: relative;
+
+        div.timeline-gradient-line {
+            display: none;
+        }
 
         div.timeline-nav,
         h1.timeline-pagecounter,
@@ -43,9 +47,12 @@
                 height: fit-content;
 
                 div.timeline-slide {
-                    height: fit-content;
                     position: relative;
+                    overflow: hidden;
+                    isolation: isolate;
                     transform: translateZ(0);
+                    will-change: transform;
+                    height: fit-content;
 
                     div.timeline-years {
                         margin-left: 1.25rem;
@@ -161,7 +168,7 @@ section.timeline-child {
         div.swiper-wrapper {
             height: fit-content;
 
-            div.timeline-event {
+            div.timeline-event.swiper-slide {
                 height: fit-content;
                 width: 10.5rem;
                 margin-bottom: 5rem;
