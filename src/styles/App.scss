@@ -16,175 +16,167 @@
 
 }
 
-div.timeline-parent {
+.timeline {
+    position: relative;
 
-    h1.timeline-title {
-        color: var(--active);
-        font-size: 1.5rem;
-        width: 7.6875rem;
-        margin: 3.75rem 1.75rem 3.5rem 1.25rem;
+    div.timeline-parent {
+        position: relative;
+
+        div.timeline-nav,
+        h1.timeline-pagecounter,
+        div.pagination-dots {
+            margin-left: 1.25rem;
+            margin-right: 1.75rem;
+        }
+
+        h1.timeline-title {
+            color: var(--active);
+            font-size: 1.5rem;
+            width: 7.6875rem;
+            margin: 3.75rem 1.75rem 3.5rem 1.25rem;
+        }
+
+        div.timeline-swiper--parent {
+            height: fit-content;
+
+            div.swiper-wrapper {
+                height: fit-content;
+
+                div.timeline-slide {
+                    height: fit-content;
+                    position: relative;
+                    transform: translateZ(0);
+
+                    div.timeline-years,
+                    hr {
+                        margin-left: 1.25rem;
+                        margin-right: 1.75rem;
+                        display: block;
+                        height: 1px;
+                        border: 0;
+                        border-top: 1px solid #ccc;
+                        margin: 0;
+                        margin-bottom: 1.25rem;
+                        padding: 0;
+                    }
+
+                    div.timeline-years {
+                        display: flex;
+                        margin-bottom: 3.5rem;
+                        justify-content: center;
+                        gap: 1rem;
+                        font-size: 2.3rem;
+                        font-weight: 700;
+
+                        h2.timeline-year--start {
+                            color: var(--blue)
+                        }
+
+                        h2.timeline-year--end {
+                            color: var(--pink)
+                        }
+                    }
+                }
+            }
+        }
+
+
+        h1.timeline-pagecounter {
+            color: #42567A;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        div.timeline-nav {
+            margin-bottom: 0.875rem;
+        }
+
+
+        div.pagination-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: absolute;
+            bottom: 1.2rem;
+            inset-inline: 0;
+            margin-inline: auto;
+            z-index: 1;
+
+            button.pagination-dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                transform: scale(1.2);
+            }
+        }
+
+        div.timeline-nav--parent {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            margin-top: 0.625rem;
+
+            button.timeline-nav {
+                border: 1px solid var(--active);
+                border-radius: 100%;
+                background-color: #FFFFFF;
+                cursor: pointer;
+
+                svg {
+                    margin: 0.5rem;
+                    height: 0.5rem;
+                    width: 0.5rem;
+                    overflow: visible
+                }
+            }
+
+            button.swiper-button-disabled {
+                border-color: var(--inactive);
+
+                svg {
+                    path {
+                        stroke: var(--inactive)
+                    }
+                }
+            }
+        }
     }
 }
 
-div.timeline-years {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    font-size: 2.3rem;
-    font-weight: 700;
 
-    h2.timeline-year--start {
-        color: var(--blue)
-    }
 
-    h2.timeline-year--end {
-        color: var(--pink)
-    }
-}
 
 section.timeline-child {
     width: calc(100% + 80px);
     padding-left: -6.25%;
     padding-right: -8.5%;
-    margin-bottom: 4.875rem
-}
+    margin-bottom: 4.875rem;
 
-div.timeline-years {
-    margin-bottom: 3.5rem;
-}
+    div.timeline-nav--child {
+        display: none;
+    }
 
-div.timeline-swiper--parent {
-    height: fit-content;
-
-    .swiper-wrapper {
-        height: fit-content;
-
-        .timeline-slide {
+    div.timeline-swiper--child {
+        div.swiper-wrapper {
             height: fit-content;
-            position: relative;
-            transform: translateZ(0);
-            div.timeline-years, hr{
-                margin-left: 1.25rem;
-                margin-right: 1.75rem;
-            }
-        }
-    }
-}
 
+            div.timeline-event {
+                height: fit-content;
+                width: 10.5rem;
+                margin-bottom: 5rem;
 
+                h3.timeline-event-year {
+                    color: var(--blue);
+                    font-family: "Bebas Neue";
+                    font-weight: 400;
+                    margin-bottom: 1rem;
+                }
 
-div.timeline-parent {
-    div.timeline-nav,
-    h1.timeline-pagecounter,
-    div.pagination-dots {
-        margin-left: 1.25rem;
-        margin-right: 1.75rem;
-    }
+                p.timeline-event-text {
+                    color: var(--active);
 
-    div.timeline-nav {
-        margin-bottom: 0.875rem;
-    }
-
-    position: relative;
-
-    h1.timeline-pagecounter {
-        color: #42567A;
-        font-size: 1rem;
-        font-weight: 400;
-    }
-
-    div.pagination-dots {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        position: absolute;
-        bottom: 1.2rem;
-        inset-inline: 0;
-        margin-inline: auto;
-        z-index: 1;
-
-        button.pagination-dot {
-            width: 6px; 
-            height: 6px; 
-            border-radius: 50%;
-            transform: scale(1.2);
-        }
-    }
-
-    div.timeline-nav--parent {
-        display: flex;
-        flex-direction: row;
-        gap: 0.5rem;
-        margin-top: 0.625rem;
-
-        button.timeline-nav {
-            border: 1px solid var(--active);
-            border-radius: 100%;
-            background-color: #FFFFFF;
-            cursor: pointer;
-
-            svg {
-                margin: 0.5rem;
-                height: 0.5rem;
-                width: 0.5rem;
-                overflow: visible
-            }
-        }
-
-        button.swiper-button-disabled {
-            border-color: var(--inactive);
-
-            svg {
-                path {
-                    stroke: var(--inactive)
                 }
             }
         }
     }
-
 }
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 0;
-    margin-bottom: 1.25rem;
-    padding: 0;
-}
-
-div.timeline-event {
-    height: fit-content;
-    width: 10.5rem;
-    margin-bottom: 5rem;
-
-    h3.timeline-event-year {
-        color: var(--blue);
-        font-family: "Bebas Neue";
-        font-weight: 400;
-        margin-bottom: 1rem;
-    }
-
-    p.timeline-event-text {
-        color: var(--active);
-
-    }
-}
-
-div.timeline-swiper--child {
-    div.swiper-wrapper {
-        height: fit-content;
-    }
-}
-
-
-div.timeline-nav--child {
-    display: none;
-}
-
-
-.timeline {
-  position: relative;
-}
-
